@@ -26,7 +26,6 @@ function custom_help($route_name, RouteMatchInterface $route_match) {
 function cutom_hook_menu(){
 
 
-
   $items['examples/theming_example/theming_example_text_form'] = array(
     'title' => 'Theming a form (text form)',
     'page callback'    => 'drupal_get_form',
