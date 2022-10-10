@@ -1,0 +1,103 @@
+
+custom.custom_controller_index:
+  path: 'demo'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::index'
+    _title: 'index'
+  requirements:
+    _permission: 'access content'
+custom.custom_controller_add:
+  path: 'demp/add'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::add'
+    _title: 'add'
+  requirements:
+    _permission: 'access content'
+custom.custom_controller_update:
+  path: 'demo/update'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::update'
+    _title: 'update'
+  requirements:
+    _permission: 'access content'
+custom.custom_controller_list:
+  path: 'demo/list'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::list'
+    _title: 'list'
+  requirements:
+    _permission: 'access content'
+custom.custom_controller_delte:
+  path: 'demo/delete'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::delte'
+    _title: 'delete'
+  requirements:
+    _permission: 'access content'
+custom.custom_form:
+  path: 'demo/addcustomer'
+  defaults:
+    _form: '\Drupal\custom\Form\CustomForm'
+    _title: 'CustomForm'
+  requirements:
+    _access: 'TRUE'
+custom.multistep_form:
+  path: '/custom/form/multistep'
+  defaults:
+    _form: '\Drupal\custom\Form\MultistepForm'
+    _title: 'MultistepForm'
+  requirements:
+    _access: 'TRUE'
+custom.multistep_form1:
+  path: '/custom/form/multistep_form1'
+  defaults:
+    _form: '\Drupal\custom\Form\MultistepForm1'
+    _title: 'MultistepForm1'
+  requirements:
+    _access: 'TRUE'
+custom.render_list:
+  path: '/custom/render/list'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::render_list'
+    _title: 'Listing'
+  requirements:
+    _access: 'TRUE'
+custom.table_list:
+  path: '/demo/table/list'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::showtabledata'
+    _title: 'Listing'
+  requirements:
+    _access: 'TRUE'
+custom.addsessionform:
+  path: '/custom/form/addsessionform'
+  defaults:
+    _form: '\Drupal\custom\Form\CustomForm'
+    _title: 'Save Sessions'
+  requirements:
+    _access: 'TRUE'
+custom.view_session:
+  path: '/custom/view/session'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::showSession'
+    _title: 'Listing'
+  requirements:
+    _access: 'TRUE'
+custom.arguments:
+  path: '/custom/arguments/{first}/{second}'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::arguments'
+  requirements:
+    _permission: 'access arguments page'
+custom.accordion:
+  path: '/custom/accordion'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::showAccordion'
+  requirements:
+    _permission: 'access arguments page'
+custom.weights:
+  path: '/custom/weights'
+  defaults:
+    _controller: '\Drupal\custom\Controller\CustomController::showWeights'
+  requirements:
+    _permission: 'access arguments page'

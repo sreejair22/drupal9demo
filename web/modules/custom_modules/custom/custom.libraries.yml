@@ -1,0 +1,25 @@
+
+custom.myjs:
+  js:
+    js/custom.js: {}
+custom.accordian:
+  js:
+    js/accordion.js: {}
+  css: 
+    component:
+      css/accordion.css: {}
+custom.weights:
+  js:
+    js/red.js: { weight: -4 }
+  css:
+    component:
+      css/jsweights.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+my_library:
+  js:
+    js/custom.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

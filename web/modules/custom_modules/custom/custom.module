@@ -1,0 +1,113 @@
+<?php
+
+/**
+ * @file
+ * Contains custom.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom module.
+    case 'help.page.custom':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Custom module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function cutom_hook_menu(){
+
+  $items['examples/theming_example/theming_example_text_form'] = array(
+    'title' => 'Theming a form (text form)',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('theming_example_text_form'),
+    'access arguments' => array('access content'),
+    'weight' => 3,
+  );
+
+  return $items;
+}
+/**
+ * Implements hook_theme().
+ */
+function custom_theme() {
+ return array(
+    'theming_example_content_array' => array(
+      // We use 'render element' when the item to be passed is a self-describing
+      // render array (it will have #theme_wrappers)
+      'render element' => 'element',
+    ),
+    'custom_item_list' => array(
+      'variables' => array(
+        'title' => NULL,
+        'items' => NULL,
+      ),
+    ),
+     'custom_theme_accordion' => array(
+      'variables' => array(
+        'title' => NULL,
+        'items' => NULL,
+      ),
+    ),
+    'customer_add_form'  => array(
+      'render element' => 'form',
+     
+    ),
+  );
+
+}
+
+/*function custom_theme($existing, $type, $theme, $path) {
+  return array(
+    'theming_example_content_array' => array(
+      // We use 'render element' when the item to be passed is a self-describing
+      // render array (it will have #theme_wrappers)
+      'render element' => 'element',
+    ),
+    'theming_example_list' => array(
+      // We use 'variables' when the item to be passed is an array whose
+      // structure must be described here.
+      'variables' => array(
+        'title' => NULL,
+        'items' => NULL,
+      ),
+    ),
+    'theming_example_text_form'  => array(
+      'render element' => 'form',
+      // In this one the rendering will be done by a template file
+      // (theming-example-text-form.tpl.php) instead of being rendered by a
+      // function. Note the use of dashes to separate words in place of
+      // underscores. The template file's extension is also left out so that
+      // it may be determined automatically depending on the template engine
+      // the site is using.
+      'template' => 'theming-example-text-form',
+    ),
+  );
+}
+*/
+
+function custom_page_attachments(array &$attachments) {
+
+    $attachments['#attached']['library'][] = 'custom/my_library';
+
+ }
+
+ function custom_preprocess_node(&$variables){
+  /*$data =\Drupal::service('custom.default')->getData();
+  var_dump($data);
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $nid = $node->id();
+  $callService = \Drupal::service('custom.author')->showAuthor($nid);
+  var_dump($callService);
+  $currentPath = \Drupal::service('path.current');
+  $path = $currentPath->getPath();
+  var_dump($path);*/
+ }

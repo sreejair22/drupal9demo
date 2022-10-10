@@ -1,0 +1,7 @@
+name: 'Custom'
+type: module
+description: 'My Custom module'
+core_version_requirement: 9.x
+package: 'Custom'
+dependencies:
+  - drupal:block

@@ -1,0 +1,16 @@
+name: CustomTheme
+type: theme
+description: 'My CUSTOM theme'
+package: MyCustomThemePackage
+core_version_requirement: 9.x
+libraries:
+  - customtheme/global-styling
+  - customtheme/custom
+ 
+base theme: stable
+
+regions:
+  content: Content
+  panel: Panel
+  header: Header
+  footer: Footer

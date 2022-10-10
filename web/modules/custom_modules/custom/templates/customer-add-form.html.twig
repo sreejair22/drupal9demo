@@ -1,0 +1,17 @@
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+<div class="row custom-form">
+<h2>Add Customer</h2>
+  <div class="col-md-6">
+ {{ form.message}}
+  </div>
+  <div class="col-md-6">
+   {{ form.name }}
+   {{ form.email_address }}
+   {{ form.mobile_number }}
+
+   {{ form.save }} {{ form.reset }}
+  </div>
+</div>

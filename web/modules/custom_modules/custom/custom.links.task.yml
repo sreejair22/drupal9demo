@@ -1,0 +1,8 @@
+custom.addsessionform:
+  route_name: custom.addsessionform
+  base_route: custom.addsessionform
+  title: Edit
+custom.view_session:
+  route_name: custom.view_session
+  base_route: custom.addsessionform
+  title: View 
